@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+  <title>子窗口传值给父窗口</title>
+  <script language="JavaScript" type="text/javascript">
+    // function openWin(u, w, h) {
+    //   var l = (screen.width - w) / 2;
+    //   var t = (screen.height - h) / 2;
+    //   var s = 'width=' + w + ', height=' + h + ', top=' + t + ', left=' + l;
+    //   s += ', toolbar=no, scrollbars=no, menubar=no, location=no, resizable=no';
+    //   open(u, 'oWin', s);
+    // }
+    function openIt(){
+      window.open("page2.html",400,300);
+    }
+  </script>
+</head>
+<body>
+<input type="text" id="text1" />
+<input type="button" value="弹出" onclick="openIt()" />
+</body>
+</html>

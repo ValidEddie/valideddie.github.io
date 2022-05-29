@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+  <title>子窗口传值给父窗口</title>
+  <script language="JavaScript" type="text/javascript">
+    function goback(obj){
+      // window.opener.document.getElementById("cy").value = obj.value;
+      console.log( window.opener.document);
+      // window.close();
+    }
+  </script>
+</head>
+<body>
+<div><input type="button" value="阿会楠" onclick="goback(this)" /></div>
+<div><input type="button" value="23岁" onclick="goback(this)" /></div>
+</body>
+</html>

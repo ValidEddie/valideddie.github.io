@@ -1,0 +1,62 @@
+<html>
+<head lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <style>
+      .black_overlay{
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: #c8c8c8;
+        z-index:1001;
+        -moz-opacity: 0.8;
+        opacity:.80;
+        filter: alpha(opacity=78);
+      }
+      .pop_win {
+        display: none;
+        position: absolute;
+        top: 10%;
+        left: 23%;
+        width: 55%;
+        height: 75%;
+        padding: 10px;
+        border: 2px solid rebeccapurple;
+        background-color: white;
+        z-index:9999;
+        overflow: auto;
+      }
+    </style>
+    <script type="text/javascript">
+      function popWin(){
+        document.getElementById('light').style.display='block';
+        document.getElementById('fade').style.display='block'
+      }
+
+      function closeWin() {
+        document.getElementById('light').style.display = 'none';
+        document.getElementById('fade').style.display = 'none'
+      }
+    </script>
+
+
+  </head>
+<body>
+
+
+<p>网页：单击按钮弹出悬浮窗+页面遮罩</p>
+<a href = "javascript:void(0)" onclick = "popWin();">请点这里</a>
+
+<div id="light" class="pop_win">
+  <a href = "javascript:void(0)" onclick = "closeWin();" style="float: right;">[x]</a>
+</div>
+<div id="fade" class="black_overlay"></div>
+
+
+</body>
+
+</html>

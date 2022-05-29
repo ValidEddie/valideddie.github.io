@@ -1,0 +1,710 @@
+[
+  {
+    "data": {
+      "id": "zn1528",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 379.09011599844507,
+      "y": 566.6700454744505
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "s",
+      "parent": "zn1528",
+      "type": "ellipse"
+    },
+    "position": {
+      "x": 379.09011599844507,
+      "y": 575.1700454744505
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "automove-viewport"
+  },
+  {
+    "data": {
+      "id": "zn1433",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 193.19103726467884,
+      "y": 513.6909534147603
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "z12",
+      "parent": "zn1433",
+      "type": "ellipse"
+    },
+    "position": {
+      "x": 193.19103726467884,
+      "y": 522.1909534147603
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "automove-viewport"
+  },
+  {
+    "data": {
+      "id": "zn993",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 606.2984505883506,
+      "y": 380.9441320532177
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "z138",
+      "parent": "zn993",
+      "type": "ellipse"
+    },
+    "position": {
+      "x": 606.2984505883506,
+      "y": 389.4441320532177
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "automove-viewport"
+  },
+  {
+    "data": {
+      "id": "zn1250",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 312.8241540499082,
+      "y": 433.76543613502884
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "z270",
+      "parent": "zn1250",
+      "type": "ellipse"
+    },
+    "position": {
+      "x": 312.8241540499082,
+      "y": 442.26543613502884
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": true,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "automove-viewport"
+  },
+  {
+    "data": {
+      "id": "zn1651",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 285.2696591684748,
+      "y": 273.3967897656088
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "z996",
+      "parent": "zn1651",
+      "type": "ellipse"
+    },
+    "position": {
+      "x": 285.2696591684748,
+      "y": 281.8967897656088
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "automove-viewport"
+  },
+  {
+    "data": {
+      "id": "zc1951",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 200.95539658102172,
+      "y": 82.41660226445612
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "swc1222",
+      "parent": "zc1951",
+      "type": "diamond"
+    },
+    "position": {
+      "x": 200.1462852191167,
+      "y": 151.83320452891223
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "switch"
+  },
+  {
+    "data": {
+      "id": "cond1831",
+      "parent": "zc1951",
+      "type": "COND",
+      "flag": "z445"
+    },
+    "position": {
+      "x": 200.95539658102172,
+      "y": 30
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "and"
+  },
+  {
+    "data": {
+      "id": "zr1048",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 67.48604693052732,
+      "y": 347.01849778660613
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "or482",
+      "parent": "zr1048",
+      "label": "data(id)",
+      "type": "triangle"
+    },
+    "position": {
+      "x": 67.48604693052732,
+      "y": 355.51849778660613
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "or"
+  },
+  {
+    "data": {
+      "id": "zn1450",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 179.4738097916088,
+      "y": 302.74653809006475
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "z509",
+      "parent": "zn1450",
+      "type": "ellipse"
+    },
+    "position": {
+      "x": 179.4738097916088,
+      "y": 311.24653809006475
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "automove-viewport"
+  },
+  {
+    "data": {
+      "id": "zn523",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 84.82975428612679,
+      "y": 187.7073402256312
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "z445",
+      "parent": "zn523",
+      "type": "ellipse"
+    },
+    "position": {
+      "x": 84.82975428612679,
+      "y": 196.2073402256312
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "automove-viewport"
+  },
+  {
+    "data": {
+      "id": "zn1988",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 15,
+      "y": 502.85069955066126
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "z1506",
+      "parent": "zn1988",
+      "type": "ellipse"
+    },
+    "position": {
+      "x": 15,
+      "y": 511.35069955066126
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "automove-viewport"
+  },
+  {
+    "data": {
+      "id": "e278",
+      "source": "cond1831",
+      "target": "swc1222",
+      "arrow": "triangle"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "s",
+      "target": "z138",
+      "arrow": "triangle",
+      "id": "853bb1bd-5cb4-462f-8ee9-17eea3ea59d0"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "s",
+      "target": "z12",
+      "arrow": "triangle",
+      "id": "2b2b6924-70f2-4533-81a1-12e3adcc3ee1"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "z12",
+      "target": "z270",
+      "arrow": "triangle",
+      "id": "07f650d8-3b3d-40c3-a05e-7d468ef41dae"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "z138",
+      "target": "z270",
+      "arrow": "triangle",
+      "id": "988f8a42-5739-456d-af6f-723589d4ffe0"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "z270",
+      "target": "z996",
+      "arrow": "triangle",
+      "id": "8a567ee0-e99d-40d3-b126-906b3eee2160"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "z996",
+      "target": "swc1222",
+      "arrow": "triangle",
+      "id": "0b8895e6-fa0c-4567-b001-3ad2476ab5b5"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "swc1222",
+      "target": "z445",
+      "arrow": "triangle",
+      "id": "1833d466-4de2-4d1a-b3cf-8f5a6a45a956"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "swc1222",
+      "target": "z509",
+      "arrow": "triangle",
+      "id": "161ccff3-0413-4c8b-b42d-8b7d62f7c7d8"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "z445",
+      "target": "or482",
+      "arrow": "triangle",
+      "id": "f51b7b86-0e79-457b-b7a3-dd4933fb1cd3"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "z509",
+      "target": "or482",
+      "arrow": "triangle",
+      "id": "7fa452ec-30b9-46b7-bce6-f034e65fa35a"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "or482",
+      "target": "z1506",
+      "arrow": "triangle",
+      "id": "88c5ac77-7e0f-4d45-8eb6-9f64d750923b"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "id": "zn313",
+      "type": "CAPSULE"
+    },
+    "position": {
+      "x": 478.1052986623894,
+      "y": 265.51973191968574
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "capsule"
+  },
+  {
+    "data": {
+      "id": "z653",
+      "parent": "zn313",
+      "type": "ellipse"
+    },
+    "position": {
+      "x": 478.1052986623894,
+      "y": 274.01973191968574
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": false,
+    "classes": "automove-viewport"
+  },
+  {
+    "data": {
+      "source": "s",
+      "target": "z653",
+      "arrow": "triangle",
+      "id": "5be8dd7b-ebbf-4bc2-b15a-d857d31ad8ad"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "z653",
+      "target": "z270",
+      "arrow": "triangle",
+      "id": "3263d1c4-3860-4242-9cde-48b8e2d3290b"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "pannable": true,
+    "classes": ""
+  }
+]
