@@ -1,0 +1,243 @@
+<!DOCTYPE>
+
+<html>
+
+<head>
+    <title>Data Stream Modeler</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch"></script>
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/dagre@0.7.4/dist/dagre.js"></script><!--graph-->
+    <script src="cytoscape-automove.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+    <!-- for testing with local version of cytoscape.js -->
+    <!--<script src="../cytoscape.js/build/cytoscape.js"></script>-->
+
+    <script src="cytoscape-cxtmenu.js"></script>
+
+    <!--ourJavaScript-->
+    <script src="datastream.js"></script>
+
+    <style>
+        body {
+            font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .header {
+            padding: 5px;
+            width: 100%;
+            text-align: center;
+            background: #1abc9c;
+            color: white;
+            font-size: 30px;
+        }
+
+        .toolbar {
+            width: 100%;
+            padding: 3px;
+            /*text-align: center;*/
+            background: #fff;
+            border-color: #000;
+            border-width: 3px;
+            color: white;
+            font-size: 30px;
+            z-index: 1;
+            background-image: linear-gradient(to bottom, white, gray);
+        }
+
+        .h-button {
+            height: 4%;
+            margin: 5px;
+        }
+
+        .h-button:hover {
+            height: 4.5%
+        }
+
+        .hx-button {
+            /*width: 60%;*/
+            width: 80%;
+            margin: 15px;
+        }
+
+        .hx-button:hover {
+            width: 60.5%;
+        }
+
+        #draggable {
+            width: 150px;
+            height: 150px;
+            padding: 0.5em;
+            outline-color: #000;
+        }
+
+        #cy {
+            position: absolute;
+            left: 0;
+            top: 18;
+            bottom: 0;
+            right: 0;
+            z-index: 999;
+            background: #fafbff;
+        }
+
+        h1 {
+            opacity: 0.5;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        /* Pattern styles */
+        .container {
+            display: table;
+            width: 100%;
+        }
+
+        .left-half {
+            background-color: #ff9e2c;
+            position: absolute;
+            left: 0px;
+            width: 8%;
+            height: 100%;
+            background-image: linear-gradient(to right, white, grey);
+        }
+
+        .right-half {
+            #background-color: #b6701e;
+            position: absolute;
+            right: 0px;
+            width: 90%;
+            height: 100%;
+        }
+
+    </style>
+
+    <style>
+        .black_overlay{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: #c8c8c8;
+            z-index:1001;
+            -moz-opacity: 0.8;
+            opacity:.80;
+            filter: alpha(opacity=78);
+        }
+        .pop_win {
+            display: none;
+            position: absolute;
+            top: 10%;
+            left: 23%;
+            width: 20%;
+            height: 30%;
+            padding: 10px;
+            border: 2px solid rebeccapurple;
+            background-color: white;
+            z-index:9999;
+            overflow: auto;
+        }
+    </style>
+
+<!--    <script type="text/javascript">-->
+<!--        $(function () {-->
+<!--            $(".changeAttributes").onclick(function () {-->
+<!--                console.log($(this).innerText);-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+</head>
+
+<body>
+<!--<div class="header">
+<h1>IoT Data Stream Program Editor v.1.0.5</h1>
+</div>-->
+<div class="toolbar">
+    <input type="file" id="btn-open" onchange="openFile()" name="file" hidden/><!--key thing is get directory path-->
+
+    <label for="btn-open">
+        <img src="./img/btn-open.png" class="h-button"/>
+        <!--				<img src="./img/btn-open.png" onclick="openFile()" class="h-button" />-->
+    </label>
+
+    <img id="btn-save" src="./img/btn-save.png" onclick="saveFile()" class="h-button"/>
+    <img src="./img/btn-backward.png" onclick="backwardPlay()" class="h-button"/>
+    <img src="./img/btn-play.png" onclick="Play()" class="h-button"/>
+    <img src="./img/btn-forward.png" onclick="forwardPlay()" class="h-button"/>
+    <img id="btn-delete" src="./img/btn-delete.png" onclick="deleteElement()" class="h-button"/>
+    <img src="./img/btn-and.png" onclick="setAND()" class="h-button"/>
+    <img src="./img/btn-or.png" onclick="setOR()" class="h-button"/>
+    <img src="./img/btn-switch.png" onclick="setSWITCH()" class="h-button"/>
+    <!--<img src="./img/dev-hub.png" onclick="setHUB()" class="h-button" />
+<img src="./img/dev-temp.png" onclick="setTEMP()" class="h-button" />
+<img src="./img/dev-hum.png" onclick="setHUM()" class="h-button" />-->
+</div>
+
+<section class="container">
+    <div class="left-half">
+
+        <img src="./img/btnx-and.png" onclick="setAND()" class="hx-button"/>
+        <img src="./img/btnx-or.png" onclick="setOR()" class="hx-button"/>
+        <img src="./img/btnx-switch.png" onclick="setSWITCH()" class="hx-button"/>
+        </br>
+<!--        <img src="./img/btnx-temp.png" onclick="setTEMP()" class="hx-button"/>-->
+<!--        <img src="./img/btnx-hum.png" onclick="setHUM()" class="hx-button"/>-->
+<!--        <img src="./img/btnx-cooler.png" onclick="setCOOLER()" class="hx-button"/>-->
+<!--        <img id="btnx-edge" src="./img/btnx-edge.png" onclick="setHUB()" class="hx-button"/>-->
+    </div>
+    <div class="right-half">
+<!--        <div id="cy" style="height:80%;"></div>-->
+        <div id="cy" style="height:90%;"></div>
+    </div>
+</section>
+
+<!--<div class="footer">
+<h4>IoT Data Stream Program Editor v.1.0.5</h4>
+
+</div>-->
+
+
+
+<!--<p>网页：单击按钮弹出悬浮窗+页面遮罩</p>-->
+<!--<a href = "javascript:void(0)" onclick = "popWin();">请点这里</a>-->
+<div id="light" class="pop_win">
+    <a href = "javascript:void(0)" onclick = "closeWin();" style="float: right;">[x]</a>
+
+<!--    <div id="nodeName" value="">ttttt</div>-->
+    <h2 id="nodeName"></h2>
+
+<!--    <form id="changeAttributes">-->
+<!--        First name: <input type="text" name="FirstName" value="Mickey"><br>-->
+<!--        Last name: <input type="text" name="LastName" value="Mouse"><br>-->
+<!--        <input type="submit" value="提交">-->
+<!--    </form>-->
+
+<!--    target<input id="swTarget" type="text" value="">-->
+
+    if (<input id="node1" type="text" value="" style="width: 50px;">
+    <input id="symbol" type="text" value="" style="width: 25px;">
+    <input id="node2" type="text" value="" style="width: 50px;">)<br>
+
+    {<br>
+    <input id="target1" type="text" value="" style="width: 50px;"><br>
+    }<br>
+
+    else<br>
+    {<br>
+    <input id="target2" type="text" value="" style="width: 50px;"><br>
+    }
+
+    <button type="button" onclick="closeWin();">submit</button>
+</div>
+<div id="fade" class="black_overlay"></div>
+
+</body>
+
+</html>
