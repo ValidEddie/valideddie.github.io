@@ -7,7 +7,17 @@ var HUB = 'hub';
 var TEMP = 'tempSensor';
 var HUM = 'humSensor';
 var COOLER = 'actuator';
-var CAPSULE = 'round-rectangle'
+var CAPSULE = 'round-rectangle';
+
+var inputData = 'Input-Operator';
+var outputData = 'Output-Operator';
+
+var GLM = 'GLM-Operator';
+var DL = 'DL-Operator';
+var RF = 'RF-Operator';
+var DT = 'DT-Operator';
+var GBT = 'GBT-Operator';
+var SVM = 'SVM-Operator';
 
 var nodeDrawType = NONE
 
@@ -374,6 +384,114 @@ function cyInitialize(jsonUrl) {
 
         style: [
             {
+                selector: '.input-Operator',
+                style: {
+                    'height': 50,
+                    'width': 100,
+                    'label': 'data(id)',
+                    'shape': 'round-rectangle',
+                    'background-image': './img/input_v1.png',
+                    'background-opacity': 0,    /*make background disappear but reserve img*/
+                    /*make img fit to node*/
+                    'background-fit': 'contain'
+                }
+            },{
+                selector: '.output-Operator',
+                style: {
+                    'height': 50,
+                    'width': 100,
+                    'label': 'data(id)',
+                    'shape': 'round-rectangle',
+                    'background-image': './img/output_v1.png',
+                    'background-opacity': 0,    /*make background disappear but reserve img*/
+                    /*make img fit to node*/
+                    'background-fit': 'contain'
+                }
+            },{
+                selector: '.GLM-Operator',
+                style: {
+                    'height': 50,
+                    'width': 100,
+                    'label': 'data(id)',
+                    'shape': 'round-rectangle',
+                    'background-image': './img/GLM.png',
+                    'background-opacity': 0,    /*make background disappear but reserve img*/
+                    /*make img fit to node*/
+                    'background-fit': 'contain'
+                }
+            },
+
+            {
+                selector: '.DL-Operator',
+                style: {
+                    'height': 50,
+                    'width': 100,
+                    'label': 'data(id)',
+                    'shape': 'round-rectangle',
+                    'background-image': './img/DL.png',
+                    'background-opacity': 0,    /*make background disappear but reserve img*/
+                    /*make img fit to node*/
+                    'background-fit': 'contain'
+                }
+            },
+
+            {
+                selector: '.RF-Operator',
+                style: {
+                    'height': 50,
+                    'width': 100,
+                    'label': 'data(id)',
+                    'shape': 'round-rectangle',
+                    'background-image': './img/RF.png',
+                    'background-opacity': 0,    /*make background disappear but reserve img*/
+                    /*make img fit to node*/
+                    'background-fit': 'contain'
+                }
+            },
+
+            {
+                selector: '.DT-Operator',
+                style: {
+                    'height': 50,
+                    'width': 100,
+                    'label': 'data(id)',
+                    'shape': 'round-rectangle',
+                    'background-image': './img/DT.png',
+                    'background-opacity': 0,    /*make background disappear but reserve img*/
+                    /*make img fit to node*/
+                    'background-fit': 'contain'
+                }
+            },
+
+            {
+                selector: '.GBT-Operator',
+                style: {
+                    'height': 50,
+                    'width': 100,
+                    'label': 'data(id)',
+                    'shape': 'round-rectangle',
+                    'background-image': './img/GBT.png',
+                    'background-opacity': 0,    /*make background disappear but reserve img*/
+                    /*make img fit to node*/
+                    'background-fit': 'contain'
+                }
+            },
+
+            {
+                selector: '.SVM-Operator',
+                style: {
+                    'height': 50,
+                    'width': 100,
+                    'label': 'data(id)',
+                    'shape': 'round-rectangle',
+                    'background-image': './img/SVM.png',
+                    'background-opacity': 0,    /*make background disappear but reserve img*/
+                    /*make img fit to node*/
+                    'background-fit': 'contain'
+                }
+            },
+
+            {
                 selector: 'node',
                 style: {
                     'shape': 'data(type)',
@@ -619,7 +737,8 @@ function cyInitialize(jsonUrl) {
                     }
                 });
 
-            } else if (nodeDrawType == SWITCH) {
+            }
+            else if (nodeDrawType == SWITCH) {
                 /*draw SWitch*/
                 var capsID = 'z' + Math.round(Math.random() * 2000);
                 var swID = 'sw' + Math.round(Math.random() * 2000);
@@ -668,7 +787,8 @@ function cyInitialize(jsonUrl) {
                     data: {id: edgeID, source: condID, target: swID, arrow: 'triangle',}
                 });
 
-            } else if (nodeDrawType == HUB) {
+            }
+            else if (nodeDrawType == HUB) {
 
                 var capsID = 'HUB(Condition)' + Math.round(Math.random() * 2000);
                 var swID = 'sw' + Math.round(Math.random() * 2000);
@@ -712,7 +832,8 @@ function cyInitialize(jsonUrl) {
                     data: {id: edgeID, source: andID, target: swID, arrow: 'triangle',}
                 });
 
-            } else if (nodeDrawType == TEMP) {
+            }
+            else if (nodeDrawType == TEMP) {
 
                 var capsID = 'zn' + Math.round(Math.random() * 2000);
                 var andID = 'SENSOR(Temp)' + Math.round(Math.random() * 2000);
@@ -743,7 +864,8 @@ function cyInitialize(jsonUrl) {
                 });
 
 
-            } else if (nodeDrawType == HUM) {
+            }
+            else if (nodeDrawType == HUM) {
 
                 var capsID = 'zn' + Math.round(Math.random() * 2000);
                 var andID = 'SENSOR(Humidity)' + Math.round(Math.random() * 2000);
@@ -774,7 +896,8 @@ function cyInitialize(jsonUrl) {
                 });
 
 
-            } else if (nodeDrawType == COOLER) {
+            }
+            else if (nodeDrawType == COOLER) {
 
                 var capsID = 'zn' + Math.round(Math.random() * 2000);
                 var andID = 'ACTUATOR(Cooler)' + Math.round(Math.random() * 2000);
@@ -805,19 +928,14 @@ function cyInitialize(jsonUrl) {
                 });
 
 
-            } else {
+            }
+            else if(nodeDrawType == inputData){
+                /*draw on inputData operator*/
+                var capsID = 'zr' + Math.round(Math.random() * 2000);/*caption or random id for module*/
+                var orID = 's-' + Math.round(Math.random() * 2000);/*random id for single node*/
+                var edgeID = 'e' + Math.round(Math.random() * 2000);/*not used now*/
 
-                var capsID = 'zn' + Math.round(Math.random() * 2000);
-                var andID = 'z' + Math.round(Math.random() * 2000);
-                var edgeID = 'e' + Math.round(Math.random() * 2000);
-
-                let classesName = 'and';
-
-                if (cy.nodes().length < 1) {
-                    andID = 's';
-                    classesName = 's';
-                }
-
+                /*add the element into the canvas*/
                 cy.add({
                     classes: 'automove-viewport',
                     data: {id: capsID, type: 'CAPSULE'},
@@ -831,22 +949,261 @@ function cyInitialize(jsonUrl) {
 
                 cy.add({
                     classes: 'automove-viewport',
-                    data: {id: andID, parent: capsID, type: '' + nodeDrawType},
-
-                    classes: classesName,
+                    data: {id: orID, parent: capsID, label: 'data(id)', type: '' + nodeDrawType,},
+                    classes: 'input-Operator',
                     position: {
                         x: evt.position.x,
                         y: evt.position.y
                     }
                 });
 
+            }
+            else if(nodeDrawType == outputData){
+                /*draw on outputData operator*/
+                var capsID = 'zr' + Math.round(Math.random() * 2000);/*caption or random id for module*/
+                var orID = 'o-' + Math.round(Math.random() * 2000);/*random id for single node*/
+                var edgeID = 'e' + Math.round(Math.random() * 2000);/*not used now*/
+
+                /*add the element into the canvas*/
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: capsID, type: 'CAPSULE'},
+
+                    classes: 'capsule',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: orID, parent: capsID, label: 'data(id)', type: '' + nodeDrawType,},
+                    classes: 'output-Operator',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
 
             }
+            else if(nodeDrawType == GLM){
+                /*draw on GLM operator*/
+                var capsID = 'zr' + Math.round(Math.random() * 2000);/*caption or random id for module*/
+                var orID = 'AI-' + Math.round(Math.random() * 2000);/*random id for single node*/
+                var edgeID = 'e' + Math.round(Math.random() * 2000);/*not used now*/
+
+                /*add the element into the canvas*/
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: capsID, type: 'CAPSULE'},
+
+                    classes: 'capsule',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: orID, parent: capsID, label: 'data(id)', type: '' + nodeDrawType,},
+                    classes: 'GLM-Operator',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+            }
+            else if(nodeDrawType == DL){
+                /*draw on DL operator*/
+                var capsID = 'zr' + Math.round(Math.random() * 2000);/*caption or random id for module*/
+                var orID = 'AI-' + Math.round(Math.random() * 2000);/*random id for single node*/
+                var edgeID = 'e' + Math.round(Math.random() * 2000);/*not used now*/
+
+                /*add the element into the canvas*/
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: capsID, type: 'CAPSULE'},
+
+                    classes: 'capsule',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: orID, parent: capsID, label: 'data(id)', type: '' + nodeDrawType,},
+                    classes: 'DL-Operator',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+            }
+            else if(nodeDrawType == RF){
+                /*draw on SVM operator*/
+                var capsID = 'zr' + Math.round(Math.random() * 2000);/*caption or random id for module*/
+                var orID = 'AI-' + Math.round(Math.random() * 2000);/*random id for single node*/
+                var edgeID = 'e' + Math.round(Math.random() * 2000);/*not used now*/
+
+                /*add the element into the canvas*/
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: capsID, type: 'CAPSULE'},
+
+                    classes: 'capsule',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: orID, parent: capsID, label: 'data(id)', type: '' + nodeDrawType,},
+                    classes: 'RF-Operator',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+            }
+            else if(nodeDrawType == DT){
+                /*draw on DT operator*/
+                var capsID = 'zr' + Math.round(Math.random() * 2000);/*caption or random id for module*/
+                var orID = 'AI-' + Math.round(Math.random() * 2000);/*random id for single node*/
+                var edgeID = 'e' + Math.round(Math.random() * 2000);/*not used now*/
+
+                /*add the element into the canvas*/
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: capsID, type: 'CAPSULE'},
+
+                    classes: 'capsule',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: orID, parent: capsID, label: 'data(id)', type: '' + nodeDrawType,},
+                    classes: 'DT-Operator',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+            }
+            else if(nodeDrawType == GBT){
+                /*draw on GBT operator*/
+                var capsID = 'zr' + Math.round(Math.random() * 2000);/*caption or random id for module*/
+                var orID = 'AI-' + Math.round(Math.random() * 2000);/*random id for single node*/
+                var edgeID = 'e' + Math.round(Math.random() * 2000);/*not used now*/
+
+                /*add the element into the canvas*/
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: capsID, type: 'CAPSULE'},
+
+                    classes: 'capsule',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: orID, parent: capsID, label: 'data(id)', type: '' + nodeDrawType,},
+                    classes: 'GBT-Operator',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+            }
+            else if(nodeDrawType == SVM){
+                /*draw on SVM operator*/
+                var capsID = 'zr' + Math.round(Math.random() * 2000);/*caption or random id for module*/
+                var orID = 'AI-' + Math.round(Math.random() * 2000);/*random id for single node*/
+                var edgeID = 'e' + Math.round(Math.random() * 2000);/*not used now*/
+
+                /*add the element into the canvas*/
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: capsID, type: 'CAPSULE'},
+
+                    classes: 'capsule',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+                cy.add({
+                    classes: 'automove-viewport',
+                    data: {id: orID, parent: capsID, label: 'data(id)', type: '' + nodeDrawType,},
+                    classes: 'SVM-Operator',
+                    position: {
+                        x: evt.position.x,
+                        y: evt.position.y
+                    }
+                });
+
+            }
+            // else {
+            //
+            //     var capsID = 'zn' + Math.round(Math.random() * 2000);
+            //     var andID = 'z' + Math.round(Math.random() * 2000);
+            //     var edgeID = 'e' + Math.round(Math.random() * 2000);
+            //
+            //     let classesName = 'and';
+            //
+            //     if (cy.nodes().length < 1) {
+            //         andID = 's';
+            //         classesName = 's';
+            //     }
+            //
+            //     cy.add({
+            //         classes: 'automove-viewport',
+            //         data: {id: capsID, type: 'CAPSULE'},
+            //
+            //         classes: 'capsule',
+            //         position: {
+            //             x: evt.position.x,
+            //             y: evt.position.y
+            //         }
+            //     });
+            //
+            //     cy.add({
+            //         classes: 'automove-viewport',
+            //         data: {id: andID, parent: capsID, type: '' + nodeDrawType},
+            //
+            //         classes: classesName,
+            //         position: {
+            //             x: evt.position.x,
+            //             y: evt.position.y
+            //         }
+            //     });
+            //
+            //
+            // }
 
             tgt1 = tgt2 = null;
             counter = 0;
 
-        } else if (tgt.isNode()) {
+        }
+        else if (tgt.isNode()) {
             //console.log(tgt.selectionType());
 
             if (tgt1 == null) {
@@ -867,7 +1224,8 @@ function cyInitialize(jsonUrl) {
                 counter = 0;
                 console.log("Cleared!")
             }
-        } else if (tgt.isEdge()) {
+        }
+        else if (tgt.isEdge()) {
             console.log('Is edge!');
         }
     });
@@ -958,7 +1316,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // jsonUrl = './data_3.json';
     // jsonUrl = './data (17).json';
     // jsonUrl = './data_improvement2.json';
-    jsonUrl = './data_data pile-up.json';
+    // jsonUrl = './data_data pile-up.json';
 
     cyInitialize(jsonUrl);
 });
@@ -1001,33 +1359,59 @@ function setAND() {
 
 function setOR() {
     nodeDrawType = OR;
-
 }
 
 function setSWITCH() {
     nodeDrawType = SWITCH;
-
 }
 
 function setHUB() {
     nodeDrawType = HUB;
-
 }
 
 function setTEMP() {
     nodeDrawType = TEMP;
-
 }
 
 function setHUM() {
     nodeDrawType = HUM;
-
 }
 
 function setCOOLER() {
     nodeDrawType = COOLER;
-
 }
+
+
+function setInput() {
+    nodeDrawType = inputData;
+}
+function setOutput() {
+    nodeDrawType = outputData;
+}
+function setGLM() {
+    nodeDrawType = GLM;
+}
+
+function setDL() {
+    nodeDrawType = DL;
+}
+
+function setRF() {
+    nodeDrawType = RF;
+}
+
+function setDT() {
+    nodeDrawType = DT;
+}
+
+function setGBT() {
+    nodeDrawType = GBT;
+}
+
+function setSVM() {
+    nodeDrawType = SVM;
+}
+
 
 function deleteElement() {
     cy.$(':selected').remove();
