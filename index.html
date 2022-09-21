@@ -95,14 +95,15 @@
         /* Pattern styles */
         .container {
             display: table;
-            width: 100%;
+            width: 80%;
         }
 
         .left-half {
             background-color: #ff9e2c;
             position: absolute;
             left: 0px;
-            width: 8%;
+            /*width: 8%;*/
+            width: 5%;
             height: 100%;
             background-image: linear-gradient(to right, white, grey);
         }
@@ -183,9 +184,18 @@
 <section class="container">
     <div class="left-half">
 
-        <img src="./img/btnx-and.png" onclick="setAND()" class="hx-button"/>
-        <img src="./img/btnx-or.png" onclick="setOR()" class="hx-button"/>
-        <img src="./img/btnx-switch.png" onclick="setSWITCH()" class="hx-button"/>
+<!--        <img src="./img/btnx-and.png" onclick="setAND()" class="hx-button"/>-->
+<!--        <img src="./img/btnx-or.png" onclick="setOR()" class="hx-button"/>-->
+<!--        <img src="./img/btnx-switch.png" onclick="setSWITCH()" class="hx-button"/>-->
+        <img src="./img/input_v1.png" onclick="setInput()" class="hx-button"/>
+        <img src="./img/output_v1.png" onclick="setOutput()" class="hx-button"/>
+
+        <img src="./img/GLM.png" onclick="setGLM()" class="hx-button"/>
+        <img src="./img/DL.png" onclick="setDL()" class="hx-button"/>
+        <img src="./img/RF.png" onclick="setRF()" class="hx-button"/>
+        <img src="./img/DT.png" onclick="setDT()" class="hx-button"/>
+        <img src="./img/GBT.png" onclick="setGBT()" class="hx-button"/>
+        <img src="./img/SVM.png" onclick="setSVM()" class="hx-button"/>
         </br>
 <!--        <img src="./img/btnx-temp.png" onclick="setTEMP()" class="hx-button"/>-->
 <!--        <img src="./img/btnx-hum.png" onclick="setHUM()" class="hx-button"/>-->
